@@ -32,6 +32,8 @@ namespace UniCatalog
             String name = textBox1.Text;
             String password = textBox2.Text;
             MessageBox.Show("Welcome " + name + "!" + password);
+            Main main = new Main();
+            main.Show();
         }
     }
 }
