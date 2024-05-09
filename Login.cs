@@ -1,0 +1,37 @@
+namespace UniCatalog
+{
+    public partial class Login : Form
+    {
+        public Login()
+        {
+            InitializeComponent();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            String name = textBox1.Text;
+            String password = textBox2.Text;
+            MessageBox.Show("Welcome " + name + "!" + password);
+        }
+    }
+}
