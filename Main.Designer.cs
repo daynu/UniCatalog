@@ -57,7 +57,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(71, 318);
+            button1.Location = new Point(105, 318);
             button1.Name = "button1";
             button1.Size = new Size(242, 168);
             button1.TabIndex = 2;
@@ -66,16 +66,17 @@
             // 
             // button2
             // 
-            button2.Location = new Point(394, 318);
+            button2.Location = new Point(451, 318);
             button2.Name = "button2";
             button2.Size = new Size(242, 168);
             button2.TabIndex = 3;
             button2.Text = "gestioneazaUtilizatori";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
-            button3.Location = new Point(710, 318);
+            button3.Location = new Point(803, 318);
             button3.Name = "button3";
             button3.Size = new Size(242, 168);
             button3.TabIndex = 4;
