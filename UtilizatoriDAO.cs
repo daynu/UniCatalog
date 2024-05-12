@@ -3,41 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Npgsql;
+using MySql.Data.MySqlClient;
 
 namespace UniCatalog
 {
     internal class UtilizatoriDAO
     {
-        string connectionPg ="Server=localhost;Port=5432;Database=UniCatalog;User Id=postgres;Password=blue2012;";
+       static string connectionSQL = "Server = sql11.freesqldatabase.com; Port = 3306; Database = sql11705978; Uid = sql11705978; Pwd = ZVsuYEK9M8;";
+        public static MySqlConnection connection = new MySqlConnection(connectionSQL);
         public class Utilizator
         {
             public string Prenume { get; set; }
             public string Nume { get; set; }
             public string Parola { get; set; }
+            public string Rol { get; set; } 
         }
 
        public List<Utilizator> GetUtilizatori()
         {
             List<Utilizator> utilizatori = new List<Utilizator>();
-            using (NpgsqlConnection con = new NpgsqlConnection(connectionPg))
+            connection.Open();
+            MySqlCommand cmd = connection.CreateCommand();
+            cmd.CommandText = "SELECT * FROM utilizatori";
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
             {
-                con.Open();
-                using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM utilizatori", con))
-                {
-                    using (NpgsqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            Utilizator utilizator = new Utilizator();
-                            utilizator.Prenume = reader["prenume"].ToString();
-                            utilizator.Nume = reader["nume"].ToString();
-                            utilizator.Parola = reader["parola"].ToString();
-                            utilizatori.Add(utilizator);
-                        }
-                    }
-                }
+                Utilizator utilizator = new Utilizator();
+                utilizator.Prenume = reader["prenume"].ToString();
+                utilizator.Nume = reader["nume"].ToString();
+                utilizator.Parola = reader["parola"].ToString();
+                utilizator.Rol = reader["rol"].ToString();
+                utilizatori.Add(utilizator);
             }
+            connection.Close();
             return utilizatori;
         }
     }
