@@ -31,9 +31,21 @@ namespace UniCatalog
         {
             String name = textBox1.Text;
             String password = textBox2.Text;
-            MessageBox.Show("Welcome " + name + "!" + password);
-            Main main = new Main();
-            main.Show();
+            List<UtilizatoriDAO.Utilizator> utilizatori = new UtilizatoriDAO().GetUtilizatori();
+            foreach (UtilizatoriDAO.Utilizator utilizator in utilizatori)
+            {
+                if (utilizator.Nume + " " + utilizator.Prenume == name && utilizator.Parola == password)
+                {
+                    Main main = new Main();
+                    main.Show();
+                    this.Hide();
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Datele introduse sunt gresite!");
+                }
+            }   
         }
     }
 }
