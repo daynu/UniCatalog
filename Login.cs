@@ -43,9 +43,14 @@ namespace UniCatalog
                 }
                 else
                 {
-                    MessageBox.Show("Datele introduse sunt gresite!");
+                    MessageBox.Show("Datele introduse sunt gresite! ERROR");
                 }
-            }   
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

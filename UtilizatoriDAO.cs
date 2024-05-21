@@ -9,7 +9,7 @@ namespace UniCatalog
 {
     internal class UtilizatoriDAO
     {
-       static string connectionSQL = "Server = sql11.freesqldatabase.com; Port = 3306; Database = sql11705978; Uid = sql11705978; Pwd = ZVsuYEK9M8;";
+       static string connectionSQL = "Server = uni-catalog.cj6s8sok2i2r.us-east-1.rds.amazonaws.com; Port = 3306; Database = UniCatalog; Uid = admin; Pwd = kristalypoo;";
         public static MySqlConnection connection = new MySqlConnection(connectionSQL);
         public class Utilizator
         {
