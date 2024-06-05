@@ -22,5 +22,10 @@ namespace UniCatalog
             List<UtilizatoriDAO.Utilizator> utilizatori = new UtilizatoriDAO().GetUtilizatori();
             dataGridView1.DataSource = utilizatori;
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

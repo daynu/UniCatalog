@@ -32,6 +32,7 @@ namespace UniCatalog
             String name = textBox1.Text;
             String password = textBox2.Text;
             List<UtilizatoriDAO.Utilizator> utilizatori = new UtilizatoriDAO().GetUtilizatori();
+            bool found = false;
             foreach (UtilizatoriDAO.Utilizator utilizator in utilizatori)
             {
                 if (utilizator.Nume + " " + utilizator.Prenume == name && utilizator.Parola == password)
@@ -39,14 +40,16 @@ namespace UniCatalog
                     Main main = new Main();
                     main.Show();
                     this.Hide();
+                    found = true;
                     return;
                 }
-                else
-                {
-                    MessageBox.Show("Datele introduse sunt gresite! ERROR");
-                }
             }
-        }
+            if (!found)
+            {
+                MessageBox.Show("Nume sau parola incorecta");
+            }
+        }   
+        
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
