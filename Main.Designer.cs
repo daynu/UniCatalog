@@ -82,6 +82,7 @@
             button3.TabIndex = 4;
             button3.Text = "gestioneazaGrupe";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // Main
             // 

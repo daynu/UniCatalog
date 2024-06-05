@@ -27,5 +27,11 @@ namespace UniCatalog
             gestionareUtilizatori gestionareUtilizatori = new gestionareUtilizatori();
             gestionareUtilizatori.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            gestionareGrupe gestionareGrupe = new gestionareGrupe();
+            gestionareGrupe.Show();
+        }
     }
 }
