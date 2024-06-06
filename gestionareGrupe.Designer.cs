@@ -30,6 +30,7 @@
         {
             comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
+            comboBox3 = new ComboBox();
             SuspendLayout();
             // 
             // comboBox1
@@ -52,11 +53,22 @@
             comboBox2.Text = "Departamentul";
             comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
+            // comboBox3
+            // 
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(42, 148);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(296, 28);
+            comboBox3.TabIndex = 2;
+            comboBox3.Text = "Program de Studiu";
+            comboBox3.SelectedIndexChanged += comboBox3_SelectedIndexChanged;
+            // 
             // gestionareGrupe
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(comboBox3);
             Controls.Add(comboBox2);
             Controls.Add(comboBox1);
             Name = "gestionareGrupe";
@@ -68,5 +80,6 @@
 
         private ComboBox comboBox1;
         private ComboBox comboBox2;
+        private ComboBox comboBox3;
     }
 }

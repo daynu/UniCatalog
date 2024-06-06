@@ -1,5 +1,9 @@
+using Newtonsoft.Json;
+using System;
+
 namespace UniCatalog
 {
+
     public partial class Login : Form
     {
         public Login()
@@ -31,13 +35,13 @@ namespace UniCatalog
         {
             String name = textBox1.Text;
             String password = textBox2.Text;
-            List<UtilizatoriDAO.Utilizator> utilizatori = new UtilizatoriDAO().GetUtilizatori();
+            List<Utilizator> utilizatori = new UtilizatoriDAO().GetUtilizatori();
             bool found = false;
-            foreach (UtilizatoriDAO.Utilizator utilizator in utilizatori)
+            foreach (Utilizator utilizator in utilizatori)
             {
                 if (utilizator.Nume + " " + utilizator.Prenume == name && utilizator.Parola == password)
                 {
-                    Main main = new Main();
+                    Main main = new Main(utilizator);
                     main.Show();
                     this.Hide();
                     found = true;

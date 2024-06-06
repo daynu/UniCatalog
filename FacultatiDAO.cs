@@ -47,5 +47,25 @@ namespace UniCatalog
             return departamente;
         }
 
+        public static List<String> getPrograme(String departament)
+        {
+
+            List<String> programe = new List<String>();
+            connection.Open();
+            MySqlCommand cmd = connection.CreateCommand();
+            cmd.CommandText = "SELECT program_de_studiu.nume FROM program_de_studiu " +
+              "JOIN departamente ON program_de_studiu.departament_id = departamente.id " +
+                "WHERE departamente.nume = " + "'" + departament + "'";
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                String program = reader["nume"].ToString();
+                programe.Add(program);
+            }
+            connection.Close();
+            return programe;
+        }
+
     }
+   
 }

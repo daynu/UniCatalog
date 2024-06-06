@@ -34,6 +34,16 @@ namespace UniCatalog
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            String departament = comboBox2.SelectedItem.ToString();
+            List<String> Programe = FacultatiDAO.getPrograme(departament);
+            foreach (String program in Programe)
+            {
+                comboBox3.Items.Add(program);
+            }
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

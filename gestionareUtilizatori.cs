@@ -19,7 +19,7 @@ namespace UniCatalog
 
         private void gestionareUtilizatori_Load(object sender, EventArgs e)
         {
-            List<UtilizatoriDAO.Utilizator> utilizatori = new UtilizatoriDAO().GetUtilizatori();
+            List<Utilizator> utilizatori = new UtilizatoriDAO().GetUtilizatori();
             dataGridView1.DataSource = utilizatori;
         }
 

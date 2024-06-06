@@ -11,13 +11,6 @@ namespace UniCatalog
     {
        static string connectionSQL = "Server = uni-catalog.cj6s8sok2i2r.us-east-1.rds.amazonaws.com; Port = 3306; Database = UniCatalog; Uid = admin; Pwd = kristalypoo;";
         public static MySqlConnection connection = new MySqlConnection(connectionSQL);
-        public class Utilizator
-        {
-            public string Prenume { get; set; }
-            public string Nume { get; set; }
-            public string Parola { get; set; }
-            public string Rol { get; set; } 
-        }
 
        public List<Utilizator> GetUtilizatori()
         {
@@ -38,5 +31,23 @@ namespace UniCatalog
             connection.Close();
             return utilizatori;
         }
+
+        public Utilizator GetUtilizator(string prenume, string nume)
+        {
+            Utilizator utilizator = new Utilizator();
+            connection.Open();
+            MySqlCommand cmd = connection.CreateCommand();
+            cmd.CommandText = "SELECT * FROM utilizatori WHERE prenume = '" + prenume + "' AND nume = '" + nume + "'";
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                utilizator.Prenume = reader["prenume"].ToString();
+                utilizator.Nume = reader["nume"].ToString();
+                utilizator.Parola = reader["parola"].ToString();
+                utilizator.Rol = reader["rol"].ToString();
+            }
+            connection.Close();
+            return utilizator;
+        }   
     }
 }
