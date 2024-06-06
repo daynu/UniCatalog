@@ -66,6 +66,33 @@ namespace UniCatalog
             return programe;
         }
 
+        public static List<String> getGrupa(String program, String an)
+        {
+            List<String> grupe = new List<String>();
+            connection.Open();
+            MySqlCommand cmd = connection.CreateCommand();
+            cmd.CommandText = "SELECT grupa.nume FROM grupa " +
+                "JOIN program_de_studiu ON grupa.program_de_studii_id = program_de_studiu.id " +
+                "WHERE program_de_studiu.nume = " + "'" + program + "'" + " AND grupa.an_de_studiu = " + "'" + an + "'";
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                String grupa = reader["nume"].ToString();
+                grupe.Add(grupa);
+            }
+            connection.Close();
+            return grupe;
+        }   
+
+
+        public static void adaugaGrupa(String numeGrupa, String an, String Program)
+        {
+            connection.Open();
+            MySqlCommand cmd = connection.CreateCommand();
+            cmd.CommandText = "INSERT INTO grupa (nume, an_de_studiu, program_de_studii_id) VALUES ('" + numeGrupa + "', '" + an + "', (SELECT id FROM program_de_studiu WHERE nume = '" + Program + "'))";
+            cmd.ExecuteNonQuery();
+            connection.Close();
+        }
     }
    
 }
