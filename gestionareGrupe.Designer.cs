@@ -35,7 +35,6 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Facultatea de Inginerie Electrică și Știința Calculatoarelor,", "Facultatatea de Matematică și Informatică" });
             comboBox1.Location = new Point(42, 26);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(296, 28);
