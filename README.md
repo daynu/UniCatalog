@@ -1,4 +1,5 @@
-#TO DO
+# To do
+
 1.Adaugare utilizatori
 2.Eliminare utilizatori
 3.Eliminare studenti
