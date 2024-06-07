@@ -38,5 +38,11 @@ namespace UniCatalog
             gestionareGrupe gestionareGrupe = new gestionareGrupe();
             gestionareGrupe.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            gestionareNote gestionareNote = new gestionareNote();
+            gestionareNote.Show();
+        }
     }
 }
