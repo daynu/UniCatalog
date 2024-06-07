@@ -15,6 +15,7 @@ namespace UniCatalog
         public gestionareGrupe()
         {
             InitializeComponent();
+            button2.Enabled = false;
             List<String> facultati = FacultatiDAO.GetFacultati();
             foreach (String facultate in facultati)
             {
@@ -69,6 +70,15 @@ namespace UniCatalog
             String grupa = comboBox5.SelectedItem.ToString();
             List<Student> studenti = new StudentiDAO().GetStudenti(grupa);
             dataGridView1.DataSource = studenti;
+            if(grupa == "Grupa")
+            {
+                dataGridView1.DataSource = null;
+                button2.Enabled = false;
+            }
+            else
+            {
+                button2.Enabled = true;
+            }
         }
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
