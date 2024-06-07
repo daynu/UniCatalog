@@ -70,5 +70,11 @@ namespace UniCatalog
                 comboBox5.Items.Add(grupa);
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AdaugaStudent adaugaStudent = new AdaugaStudent(comboBox5.SelectedItem.ToString());
+            adaugaStudent.Show();
+        }
     }
 }

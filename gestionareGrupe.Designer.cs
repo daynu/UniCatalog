@@ -35,6 +35,7 @@
             comboBox4 = new ComboBox();
             comboBox5 = new ComboBox();
             dataGridView1 = new DataGridView();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -102,17 +103,28 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(470, 112);
+            dataGridView1.Location = new Point(42, 298);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(300, 188);
+            dataGridView1.Size = new Size(508, 397);
             dataGridView1.TabIndex = 6;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(755, 415);
+            button2.Name = "button2";
+            button2.Size = new Size(239, 39);
+            button2.TabIndex = 7;
+            button2.Text = "Adaugă Student în Grupă";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // gestionareGrupe
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1102, 707);
+            Controls.Add(button2);
             Controls.Add(dataGridView1);
             Controls.Add(comboBox5);
             Controls.Add(comboBox4);
@@ -135,5 +147,6 @@
         private ComboBox comboBox4;
         private ComboBox comboBox5;
         private DataGridView dataGridView1;
+        private Button button2;
     }
 }
