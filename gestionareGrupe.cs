@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -7,15 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+
 
 namespace UniCatalog
 {
     public partial class gestionareGrupe : Form
     {
+        static string connectionSQL = "Server = uni-catalog.cj6s8sok2i2r.us-east-1.rds.amazonaws.com; Port = 3306; Database = UniCatalog; Uid = admin; Pwd = kristalypoo;";
+        public static MySqlConnection connection = new MySqlConnection(connectionSQL);
         public gestionareGrupe()
         {
             InitializeComponent();
             button2.Enabled = false;
+            button3.Enabled = false;
             List<String> facultati = FacultatiDAO.GetFacultati();
             foreach (String facultate in facultati)
             {
@@ -70,14 +76,17 @@ namespace UniCatalog
             String grupa = comboBox5.SelectedItem.ToString();
             List<Student> studenti = new StudentiDAO().GetStudenti(grupa);
             dataGridView1.DataSource = studenti;
-            if(grupa == "Grupa")
+
+            if (grupa == "Grupa")
             {
                 dataGridView1.DataSource = null;
                 button2.Enabled = false;
+                button3.Enabled = false;
             }
             else
             {
                 button2.Enabled = true;
+                button3.Enabled = true;
             }
         }
 
@@ -98,6 +107,26 @@ namespace UniCatalog
         {
             AdaugaStudent adaugaStudent = new AdaugaStudent(comboBox5.SelectedItem.ToString());
             adaugaStudent.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if(dataGridView1.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                String nume = selectedRow.Cells["nume"].Value.ToString();
+                String prenume = selectedRow.Cells["prenume"].Value.ToString();
+                Console.WriteLine(nume);
+                Console.WriteLine(prenume);
+                
+                connection.Open();
+                MySqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = "DELETE FROM studenti WHERE studenti.nume ='" + nume + "' AND studenti.prenume ='" + prenume + "' AND studenti.grupa_id = (SELECT id FROM grupa WHERE nume = '" + comboBox5.SelectedItem.ToString() + "')";
+                cmd.ExecuteNonQuery();
+                connection.Close();
+                
+            }
+           
         }
     }
 }
