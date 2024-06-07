@@ -67,7 +67,7 @@ namespace UniCatalog
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
             string an = comboBox4.SelectedItem.ToString();
-            string program = comboBox3.SelectedItem.ToString();
+            string program = comboBox3.SelectedItem != null ? comboBox3.SelectedItem.ToString() : "";
             comboBox5.Items.Clear();
             comboBox5.Text = "Grupa";
             List<String> grupe = FacultatiDAO.getGrupa(program, an);

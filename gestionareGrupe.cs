@@ -70,7 +70,7 @@ namespace UniCatalog
             String grupa = comboBox5.SelectedItem.ToString();
             List<Student> studenti = new StudentiDAO().GetStudenti(grupa);
             dataGridView1.DataSource = studenti;
-            if(grupa == "Grupa")
+            if (grupa == "Grupa")
             {
                 dataGridView1.DataSource = null;
                 button2.Enabled = false;
@@ -84,7 +84,7 @@ namespace UniCatalog
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
             string an = comboBox4.SelectedItem.ToString();
-            string program = comboBox3.SelectedItem.ToString();
+            string program = comboBox3.SelectedItem != null ? comboBox3.SelectedItem.ToString() : "";
             comboBox5.Items.Clear();
             comboBox5.Text = "Grupa";
             List<String> grupe = FacultatiDAO.getGrupa(program, an);
@@ -95,6 +95,12 @@ namespace UniCatalog
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+            AdaugaStudent adaugaStudent = new AdaugaStudent(comboBox5.SelectedItem.ToString());
+            adaugaStudent.Show();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
         {
             AdaugaStudent adaugaStudent = new AdaugaStudent(comboBox5.SelectedItem.ToString());
             adaugaStudent.Show();
