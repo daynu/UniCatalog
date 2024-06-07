@@ -75,6 +75,13 @@ namespace UniCatalog
             {
                 comboBox5.Items.Add(grupa);
             }
+            List<String> Discipline = CatalogDAO.getDisciplina(program, an);
+            comboBox6.Items.Clear();
+            comboBox6.Text = "Disciplina";
+            foreach (String disciplina in Discipline)
+            {
+                comboBox6.Items.Add(disciplina);
+            }
         }
 
         private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)

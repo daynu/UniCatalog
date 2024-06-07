@@ -17,7 +17,7 @@ namespace UniCatalog
             connection.Open();
             MySqlCommand cmd = connection.CreateCommand();
             cmd.CommandText = "SELECT disciplina.nume FROM disciplina " +
-                "WHERE disciplina.program_id = (SELECT id FROM program_de_studiu " +
+                "WHERE disciplina.program_de_studiu_id = (SELECT id FROM program_de_studiu " +
                 "WHERE nume = '" + program + "' ) AND disciplina.an = '" + an + "'";
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())

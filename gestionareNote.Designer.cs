@@ -39,7 +39,7 @@
             // comboBox5
             // 
             comboBox5.FormattingEnabled = true;
-            comboBox5.Location = new Point(432, 254);
+            comboBox5.Location = new Point(432, 303);
             comboBox5.Name = "comboBox5";
             comboBox5.Size = new Size(296, 28);
             comboBox5.TabIndex = 12;
@@ -90,7 +90,7 @@
             // comboBox6
             // 
             comboBox6.FormattingEnabled = true;
-            comboBox6.Location = new Point(432, 305);
+            comboBox6.Location = new Point(432, 254);
             comboBox6.Name = "comboBox6";
             comboBox6.Size = new Size(296, 28);
             comboBox6.TabIndex = 13;
