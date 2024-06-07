@@ -26,6 +26,12 @@ namespace UniCatalog
         {
             String facultate = comboBox1.SelectedItem.ToString();
             List<String> Departamente = FacultatiDAO.getDepartamente(facultate);
+            comboBox2.Items.Clear();
+            comboBox2.Text = "Departamentul";
+            comboBox3.Items.Clear();
+            comboBox3.Text = "Program de Studiu";
+            comboBox5.Items.Clear();
+            comboBox5.Text = "Grupa";
             foreach (String departament in Departamente)
             {
                 comboBox2.Items.Add(departament);
@@ -36,6 +42,10 @@ namespace UniCatalog
         {
             String departament = comboBox2.SelectedItem.ToString();
             List<String> Programe = FacultatiDAO.getPrograme(departament);
+            comboBox3.Items.Clear();
+            comboBox3.Text = "Program de Studiu";
+            comboBox5.Items.Clear();
+            comboBox5.Text = "Grupa";
             foreach (String program in Programe)
             {
                 comboBox3.Items.Add(program);
@@ -44,7 +54,8 @@ namespace UniCatalog
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            comboBox5.Items.Clear();
+            comboBox5.Text = "Grupa";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -64,6 +75,8 @@ namespace UniCatalog
         {
             string an = comboBox4.SelectedItem.ToString();
             string program = comboBox3.SelectedItem.ToString();
+            comboBox5.Items.Clear();
+            comboBox5.Text = "Grupa";
             List<String> grupe = FacultatiDAO.getGrupa(program, an);
             foreach (String grupa in grupe)
             {
