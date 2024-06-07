@@ -111,22 +111,25 @@ namespace UniCatalog
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if(dataGridView1.SelectedRows.Count > 0)
+
+            string grupa = comboBox5.SelectedItem.ToString();
+            try
             {
-                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
-                String nume = selectedRow.Cells["nume"].Value.ToString();
-                String prenume = selectedRow.Cells["prenume"].Value.ToString();
-                Console.WriteLine(nume);
-                Console.WriteLine(prenume);
-                
+                string nume = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                string prenume = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
                 connection.Open();
                 MySqlCommand cmd = connection.CreateCommand();
-                cmd.CommandText = "DELETE FROM studenti WHERE studenti.nume ='" + nume + "' AND studenti.prenume ='" + prenume + "' AND studenti.grupa_id = (SELECT id FROM grupa WHERE nume = '" + comboBox5.SelectedItem.ToString() + "')";
+                cmd.CommandText = "DELETE FROM studenti WHERE nume = '" + nume + "' AND prenume = '" + prenume + "' AND grupa_id = (SELECT id FROM grupa WHERE nume = '" + grupa + "')";
                 cmd.ExecuteNonQuery();
                 connection.Close();
-                
             }
-           
+            catch (Exception ex)
+            {
+                MessageBox.Show("Selectati un student pentru a-l sterge prin click stanga pe casuta libera din stanga randului");
+            }
+            dataGridView1.DataSource = new StudentiDAO().GetStudenti(grupa);
+
+
         }
     }
 }
