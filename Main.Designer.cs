@@ -39,36 +39,39 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Modern No. 20", 28.1999989F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(32, 21);
+            label1.Location = new Point(15, 10);
             label1.Name = "label1";
-            label1.Size = new Size(161, 48);
+            label1.Size = new Size(132, 40);
             label1.TabIndex = 0;
             label1.Text = "Catalog";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(1703, 49);
+            label2.Location = new Point(15, 50);
             label2.Name = "label2";
-            label2.Size = new Size(49, 20);
+            label2.Size = new Size(39, 15);
             label2.TabIndex = 1;
             label2.Text = "Name";
             label2.Click += label2_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(105, 318);
+            button1.Location = new Point(400, 171);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(242, 168);
+            button1.Size = new Size(200, 150);
             button1.TabIndex = 2;
             button1.Text = "gestioneazaNote";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(451, 318);
+            button2.Location = new Point(400, 479);
+            button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(242, 168);
+            button2.Size = new Size(200, 150);
             button2.TabIndex = 3;
             button2.Text = "gestioneazaUtilizatori";
             button2.UseVisualStyleBackColor = true;
@@ -76,9 +79,10 @@
             // 
             // button3
             // 
-            button3.Location = new Point(803, 318);
+            button3.Location = new Point(400, 325);
+            button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
-            button3.Size = new Size(242, 168);
+            button3.Size = new Size(200, 150);
             button3.TabIndex = 4;
             button3.Text = "gestioneazaGrupe";
             button3.UseVisualStyleBackColor = true;
@@ -86,14 +90,15 @@
             // 
             // Main
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1902, 1033);
+            ClientSize = new Size(984, 761);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Main";
             Text = "UniCatalog";
             ResumeLayout(false);
