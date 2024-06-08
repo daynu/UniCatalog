@@ -67,16 +67,10 @@ namespace UniCatalog
                     string grupa = comboBox5.SelectedItem.ToString();
                     string disciplina = comboBox6.SelectedItem.ToString();
 
-                    List<double> note = CatalogDAO.getNote(disciplina, grupa);
+                    List<Catalog> note = CatalogDAO.getNote(disciplina, grupa);
 
-                    if (note != null && note.Count > 0)
-                    {
-                        dataGridView1.DataSource = note.Select(n => new { Nota = n }).ToList();
-                    }
-                    else
-                    {
-                        dataGridView1.DataSource = null;
-                    }
+                    dataGridView1.DataSource = note;
+
                 }
             }
             catch (Exception ex)
