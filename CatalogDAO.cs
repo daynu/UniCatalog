@@ -29,6 +29,24 @@ namespace UniCatalog
             return discipline;
         }
 
+        public static List<Double> getNote(String disciplina, String grupa)
+        {
+            List<Double> note = new List<Double>();
+            connection.Open();
+            MySqlCommand cmd = connection.CreateCommand();
+            cmd.CommandText = "SELECT catalog.nota FROM catalog " +
+                "WHERE catalog.disciplina_id = (SELECT id FROM disciplina " +
+                "WHERE nume = '" + disciplina + "' ) AND catalog.student_id IN " +
+                "(SELECT id FROM studenti WHERE grupa_id = (SELECT id FROM grupa WHERE nume = '" + grupa + "'))";
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Double nota = Double.Parse(reader["nota"].ToString());
+                note.Add(nota);
+            }
+            connection.Close();
+            return note;
+        }   
 
 
     }

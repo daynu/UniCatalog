@@ -60,8 +60,29 @@ namespace UniCatalog
 
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String grupa = comboBox5.SelectedItem.ToString();
-            List<Student> studenti = new StudentiDAO().GetStudenti(grupa);
+            try
+            {
+                if (comboBox5.SelectedItem != null && comboBox6.SelectedItem != null)
+                {
+                    string grupa = comboBox5.SelectedItem.ToString();
+                    string disciplina = comboBox6.SelectedItem.ToString();
+
+                    List<double> note = CatalogDAO.getNote(disciplina, grupa);
+
+                    if (note != null && note.Count > 0)
+                    {
+                        dataGridView1.DataSource = note.Select(n => new { Nota = n }).ToList();
+                    }
+                    else
+                    {
+                        dataGridView1.DataSource = null;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
@@ -85,6 +106,11 @@ namespace UniCatalog
         }
 
         private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

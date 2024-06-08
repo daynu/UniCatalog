@@ -34,6 +34,8 @@
             comboBox2 = new ComboBox();
             comboBox1 = new ComboBox();
             comboBox6 = new ComboBox();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // comboBox5
@@ -97,11 +99,22 @@
             comboBox6.Text = "Disciplina";
             comboBox6.SelectedIndexChanged += comboBox6_SelectedIndexChanged;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(335, 367);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(502, 213);
+            dataGridView1.TabIndex = 14;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
             // gestionareNote
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1081, 688);
+            Controls.Add(dataGridView1);
             Controls.Add(comboBox6);
             Controls.Add(comboBox5);
             Controls.Add(comboBox4);
@@ -110,6 +123,7 @@
             Controls.Add(comboBox1);
             Name = "gestionareNote";
             Text = "gestionareNote";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -121,5 +135,6 @@
         private ComboBox comboBox2;
         private ComboBox comboBox1;
         private ComboBox comboBox6;
+        private DataGridView dataGridView1;
     }
 }
