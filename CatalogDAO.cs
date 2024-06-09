@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -54,7 +55,92 @@ namespace UniCatalog
             connection.Close();
             return list;
 
-        }   
+        }
+
+        public static DataTable GetPivotedGrades(string disciplina, string grupa)
+        {
+            DataTable dataTable = new DataTable();
+
+            try
+            {
+                connection.Open();
+
+                string dateQuery = @"
+                    SELECT DISTINCT data
+                    FROM catalog
+                    JOIN studenti ON catalog.student_id = studenti.id
+                    JOIN disciplina ON catalog.disciplina_id = disciplina.id
+                    JOIN grupa ON studenti.grupa_id = grupa.id
+                    WHERE disciplina.nume = @disciplina AND grupa.nume = @grupa
+                    ORDER BY data";
+
+                MySqlCommand dateCmd = new MySqlCommand(dateQuery, connection);
+                dateCmd.Parameters.AddWithValue("@disciplina", disciplina);
+                dateCmd.Parameters.AddWithValue("@grupa", grupa);
+
+                MySqlDataReader dateReader = dateCmd.ExecuteReader();
+                List<DateTime> dates = new List<DateTime>();
+
+                while (dateReader.Read())
+                {
+                    dates.Add(dateReader.GetDateTime("data"));
+                }
+                dateReader.Close();
+
+                if (dates.Count == 0)
+                {
+                    return dataTable; 
+                }
+
+                StringBuilder queryBuilder = new StringBuilder();
+                queryBuilder.Append(@"
+                    SELECT 
+                        studenti.id AS StudentID, 
+                        studenti.nume AS Nume, 
+                        studenti.prenume AS Prenume");
+
+                foreach (var date in dates)
+                {
+                    queryBuilder.AppendFormat(", MAX(CASE WHEN data = '{0}' THEN nota ELSE NULL END) AS '{0}'", date.ToString("yyyy-MM-dd"));
+                }
+
+                queryBuilder.Append(@"
+                    FROM 
+                        catalog
+                    JOIN 
+                        studenti ON catalog.student_id = studenti.id
+                    JOIN 
+                        disciplina ON catalog.disciplina_id = disciplina.id
+                    JOIN 
+                        grupa ON studenti.grupa_id = grupa.id
+                    WHERE 
+                        disciplina.nume = @disciplina AND grupa.nume = @grupa
+                    GROUP BY 
+                        studenti.id, studenti.nume, studenti.prenume
+                    ORDER BY 
+                        studenti.id");
+
+                string query = queryBuilder.ToString();
+
+                // Step 3: Execute the query and fill the DataTable
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@disciplina", disciplina);
+                cmd.Parameters.AddWithValue("@grupa", grupa);
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                adapter.Fill(dataTable);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return dataTable;
+        }
 
 
     }

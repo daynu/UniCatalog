@@ -66,11 +66,8 @@ namespace UniCatalog
                 {
                     string grupa = comboBox5.SelectedItem.ToString();
                     string disciplina = comboBox6.SelectedItem.ToString();
-
-                    List<Catalog> note = CatalogDAO.getNote(disciplina, grupa);
-
-                    dataGridView1.DataSource = note;
-
+                    DataTable pivotedGrades = CatalogDAO.GetPivotedGrades(disciplina, grupa);
+                    dataGridView1.DataSource = pivotedGrades;
                 }
             }
             catch (Exception ex)
