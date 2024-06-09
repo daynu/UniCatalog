@@ -1,6 +1,6 @@
 ﻿namespace UniCatalog
 {
-    partial class AdaugaStudent
+    partial class AdaugaUtilizatori
     {
         /// <summary>
         /// Required designer variable.
@@ -28,58 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
+            button1 = new Button();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
-            button1 = new Button();
+            textBox3 = new TextBox();
             SuspendLayout();
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(94, 51);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Nume";
-            textBox1.Size = new Size(283, 27);
-            textBox1.TabIndex = 0;
-            textBox1.TextChanged += textBox1_TextChanged;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(97, 111);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Prenume";
-            textBox2.Size = new Size(281, 27);
-            textBox2.TabIndex = 1;
-            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // button1
             // 
-            button1.BackColor = SystemColors.Control;
-            button1.Location = new Point(182, 192);
+            button1.Location = new Point(166, 221);
             button1.Name = "button1";
-            button1.Size = new Size(97, 51);
-            button1.TabIndex = 2;
-            button1.Text = "Adaugă";
+            button1.Size = new Size(169, 52);
+            button1.TabIndex = 0;
+            button1.Text = "Adauga";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
-            // AdaugaStudent
+            // textBox1
+            // 
+            textBox1.Location = new Point(89, 73);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Nume";
+            textBox1.Size = new Size(309, 27);
+            textBox1.TabIndex = 1;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(89, 120);
+            textBox2.Name = "textBox2";
+            textBox2.PlaceholderText = "Prenume";
+            textBox2.Size = new Size(309, 27);
+            textBox2.TabIndex = 2;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(89, 166);
+            textBox3.Name = "textBox3";
+            textBox3.PlaceholderText = "Parola";
+            textBox3.Size = new Size(309, 27);
+            textBox3.TabIndex = 3;
+            // 
+            // AdaugaUtilizatori
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 451);
-            Controls.Add(button1);
+            ClientSize = new Size(800, 450);
+            Controls.Add(textBox3);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
-            Name = "AdaugaStudent";
-            Text = "AdaugaStudent";
+            Controls.Add(button1);
+            Name = "AdaugaUtilizatori";
+            Text = "AdaugaUtilizatori";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
+        private Button button1;
         private TextBox textBox1;
         private TextBox textBox2;
-        private Button button1;
+        private TextBox textBox3;
     }
 }
