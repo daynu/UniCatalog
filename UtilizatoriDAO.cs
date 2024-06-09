@@ -48,6 +48,15 @@ namespace UniCatalog
             }
             connection.Close();
             return utilizator;
-        }   
+        }
+
+        public void AddUtilizator(string nume, string prenume, string parola, string rol)
+        {
+            connection.Open();
+            MySqlCommand cmd = connection.CreateCommand();
+            cmd.CommandText = "INSERT INTO utilizatori (nume, prenume, parola, rol) VALUES ('" + nume + "', '" + prenume + "', '" + parola + "', '" + rol + "')";
+            cmd.ExecuteNonQuery();
+            connection.Close();
+        }
     }
 }

@@ -32,16 +32,18 @@
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             textBox3 = new TextBox();
+            comboBox1 = new ComboBox();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(166, 221);
+            button1.Location = new Point(166, 267);
             button1.Name = "button1";
             button1.Size = new Size(169, 52);
             button1.TabIndex = 0;
             button1.Text = "Adauga";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // textBox1
             // 
@@ -67,11 +69,22 @@
             textBox3.Size = new Size(309, 27);
             textBox3.TabIndex = 3;
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Administrator", "Cadru didactic", "Secretar" });
+            comboBox1.Location = new Point(89, 216);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(309, 28);
+            comboBox1.TabIndex = 4;
+            comboBox1.Text = "Rol";
+            // 
             // AdaugaUtilizatori
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(comboBox1);
             Controls.Add(textBox3);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
@@ -88,5 +101,6 @@
         private TextBox textBox1;
         private TextBox textBox2;
         private TextBox textBox3;
+        private ComboBox comboBox1;
     }
 }

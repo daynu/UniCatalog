@@ -19,5 +19,24 @@ namespace UniCatalog
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string nume = textBox1.Text;
+            string prenume = textBox2.Text;
+            string parola = textBox3.Text;
+            string rol = comboBox1.SelectedItem != null ? comboBox1.SelectedItem.ToString() : "Rol";
+            if (nume != "" && prenume != "" && parola != "" && rol != "Rol")
+            {
+
+                new UtilizatoriDAO().AddUtilizator(nume, prenume, parola, rol);
+                MessageBox.Show("Utilizator adaugat cu succes!");
+            }
+            else
+            {
+                MessageBox.Show("Toate campurile sunt obligatorii!");
+            }
+
+        }
     }
 }
