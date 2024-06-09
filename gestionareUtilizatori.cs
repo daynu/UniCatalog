@@ -39,5 +39,23 @@ namespace UniCatalog
             AdaugaUtilizatori adaugaUtilizatori = new AdaugaUtilizatori();
             adaugaUtilizatori.Show();
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {  
+            try
+            {
+                string nume = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+                string prenume = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                string parola = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+                new UtilizatoriDAO().DeleteUtilizator(prenume, nume, parola);
+                MessageBox.Show("Utilizator sters cu succes!");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Selectati un utilizator prin click stanga pe casuta libera din stanga randului ");
+            }
+            dataGridView1.DataSource = new UtilizatoriDAO().GetUtilizatori();
+        }
     }
 }

@@ -58,5 +58,14 @@ namespace UniCatalog
             cmd.ExecuteNonQuery();
             connection.Close();
         }
+
+        public void DeleteUtilizator(string prenume, string nume, string parola)
+        {
+            connection.Open();
+            MySqlCommand cmd = connection.CreateCommand();
+            cmd.CommandText = "DELETE FROM utilizatori WHERE prenume = '" + prenume + "' AND nume = '" + nume + "' AND parola = '" + parola + "'";
+            cmd.ExecuteNonQuery();
+            connection.Close();
+        }   
     }
 }
