@@ -28,15 +28,16 @@ namespace UniCatalog
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AdaugaUtilizatori adaugaUtilizatori = new AdaugaUtilizatori();
-            adaugaUtilizatori.Show();
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            AdaugaUtilizatori adaugaUtilizatori = new AdaugaUtilizatori();
+            adaugaUtilizatori.Show();
         }
     }
 }

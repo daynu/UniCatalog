@@ -122,7 +122,7 @@ namespace UniCatalog
 
                 string query = queryBuilder.ToString();
 
-                // Step 3: Execute the query and fill the DataTable
+               
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@disciplina", disciplina);
                 cmd.Parameters.AddWithValue("@grupa", grupa);
