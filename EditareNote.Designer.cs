@@ -37,6 +37,8 @@
             label3 = new Label();
             textBox6 = new TextBox();
             dateTimePicker1 = new DateTimePicker();
+            label1 = new Label();
+            button2 = new Button();
             SuspendLayout();
             // 
             // textBox1
@@ -88,12 +90,12 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 15F);
-            button1.Location = new Point(211, 461);
+            button1.Location = new Point(106, 395);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(107, 37);
+            button1.Size = new Size(115, 56);
             button1.TabIndex = 8;
-            button1.Text = "Adauga";
+            button1.Text = "Adaugă";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -124,11 +126,36 @@
             dateTimePicker1.Size = new Size(158, 23);
             dateTimePicker1.TabIndex = 12;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Niagara Solid", 39.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(160, 31);
+            label1.Name = "label1";
+            label1.Size = new Size(175, 56);
+            label1.TabIndex = 19;
+            label1.Text = "Editare Note";
+            // 
+            // button2
+            // 
+            button2.Font = new Font("Segoe UI", 15F);
+            button2.Location = new Point(270, 395);
+            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Name = "button2";
+            button2.Size = new Size(115, 56);
+            button2.TabIndex = 20;
+            button2.Text = "Editează";
+            button2.UseVisualStyleBackColor = true;
+            // 
             // EditareNote
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(590, 548);
+            BackColor = Color.White;
+            ClientSize = new Size(520, 507);
+            Controls.Add(button2);
+            Controls.Add(label1);
             Controls.Add(dateTimePicker1);
             Controls.Add(textBox6);
             Controls.Add(label3);
@@ -155,5 +182,7 @@
         private Label label3;
         private TextBox textBox6;
         private DateTimePicker dateTimePicker1;
+        private Label label1;
+        private Button button2;
     }
 }
