@@ -38,6 +38,7 @@
             label3 = new Label();
             textBox6 = new TextBox();
             dateTimePicker1 = new DateTimePicker();
+            button2 = new Button();
             SuspendLayout();
             // 
             // textBox1
@@ -103,12 +104,12 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 15F);
-            button1.Location = new Point(211, 461);
+            button1.Location = new Point(329, 454);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
             button1.Size = new Size(122, 49);
             button1.TabIndex = 8;
-            button1.Text = "Modifică";
+            button1.Text = "Adauga";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -141,11 +142,22 @@
             dateTimePicker1.Size = new Size(180, 27);
             dateTimePicker1.TabIndex = 12;
             // 
+            // button2
+            // 
+            button2.Location = new Point(121, 454);
+            button2.Name = "button2";
+            button2.Size = new Size(120, 49);
+            button2.TabIndex = 13;
+            button2.Text = "Modifica";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // EditareNote
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(590, 548);
+            Controls.Add(button2);
             Controls.Add(dateTimePicker1);
             Controls.Add(textBox6);
             Controls.Add(label3);
@@ -175,5 +187,6 @@
         private Label label3;
         private TextBox textBox6;
         private DateTimePicker dateTimePicker1;
+        private Button button2;
     }
 }

@@ -45,16 +45,51 @@ namespace UniCatalog
             double nota_val = double.Parse(nota);
 
 
-            if(nota_val > 10 || nota_val <= 0)
+            if (nota_val > 10 || nota_val <= 0)
             {
                 MessageBox.Show("Valoare invalidă pentru notă!");
             }
 
             connection.Open();
             MySqlCommand cmd = connection.CreateCommand();
-            cmd.CommandText = "INSERT INTO catalog(student_id, disciplina_id, data, nota) VALUES ((SELECT id FROM studenti WHERE nume = '" +nume+ "' AND prenume = '" +prenume+ "' AND grupa_id = (SELECT id FROM grupa WHERE nume = '" + grupa + "')), (SELECT id FROM disciplina WHERE nume = '" + disciplina+ "'), '" +data+ "', '" +nota+ "')";
+            cmd.CommandText = "INSERT INTO catalog(student_id, disciplina_id, data, nota) VALUES ((SELECT id FROM studenti WHERE nume = '" + nume + "' AND prenume = '" + prenume + "' AND grupa_id = (SELECT id FROM grupa WHERE nume = '" + grupa + "')), (SELECT id FROM disciplina WHERE nume = '" + disciplina + "'), '" + data + "', '" + nota + "')";
             cmd.ExecuteNonQuery();
             connection.Close();
+
+            MessageBox.Show("Notă adăugată cu succes!");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string nume = textBox1.Text;
+            string prenume = textBox2.Text;
+            string disciplina = textBox3.Text;
+            string nota = textBox4.Text;
+            string data = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+            string grupa = textBox6.Text;
+
+            if (string.IsNullOrWhiteSpace(nota))
+            {
+                nota = "0";
+                MessageBox.Show("Eroare editare notă!");
+            }
+
+            double nota_val = double.Parse(nota);
+
+            if (nota_val > 10 || nota_val <= 0)
+            {
+                MessageBox.Show("Valoare invalidă pentru notă!");
+            }
+
+            connection.Open();
+            MySqlCommand cmd = connection.CreateCommand();
+            cmd.CommandText = "UPDATE catalog SET nota = '" + nota + "' WHERE student_id = (SELECT id FROM studenti WHERE nume = '" + nume + "' AND prenume = '" + prenume + "' AND grupa_id = (SELECT id FROM grupa WHERE nume = '" + grupa + "')) AND disciplina_id = (SELECT id FROM disciplina WHERE nume = '" + disciplina + "') AND data = '" + data + "'";
+            cmd.ExecuteNonQuery();
+            connection.Close();
+
+            MessageBox.Show("Notă editată cu succes!");
+
+
         }
     }
 }
