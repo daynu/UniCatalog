@@ -37,13 +37,14 @@
             dataGridView1 = new DataGridView();
             button2 = new Button();
             button3 = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(37, 20);
+            comboBox1.Location = new Point(41, 114);
             comboBox1.Margin = new Padding(3, 2, 3, 2);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(260, 23);
@@ -54,7 +55,7 @@
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(37, 69);
+            comboBox2.Location = new Point(41, 163);
             comboBox2.Margin = new Padding(3, 2, 3, 2);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(260, 23);
@@ -65,7 +66,7 @@
             // comboBox3
             // 
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(37, 111);
+            comboBox3.Location = new Point(41, 205);
             comboBox3.Margin = new Padding(3, 2, 3, 2);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(260, 23);
@@ -75,10 +76,11 @@
             // 
             // button1
             // 
-            button1.Location = new Point(497, 20);
+            button1.Font = new Font("Segoe UI", 12F);
+            button1.Location = new Point(358, 123);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(150, 22);
+            button1.Size = new Size(209, 43);
             button1.TabIndex = 3;
             button1.Text = "Adaugă Grupă";
             button1.UseVisualStyleBackColor = true;
@@ -88,7 +90,7 @@
             // 
             comboBox4.FormattingEnabled = true;
             comboBox4.Items.AddRange(new object[] { "1", "2", "3", "4" });
-            comboBox4.Location = new Point(38, 152);
+            comboBox4.Location = new Point(42, 246);
             comboBox4.Margin = new Padding(3, 2, 3, 2);
             comboBox4.Name = "comboBox4";
             comboBox4.Size = new Size(259, 23);
@@ -99,7 +101,7 @@
             // comboBox5
             // 
             comboBox5.FormattingEnabled = true;
-            comboBox5.Location = new Point(39, 188);
+            comboBox5.Location = new Point(43, 282);
             comboBox5.Margin = new Padding(3, 2, 3, 2);
             comboBox5.Name = "comboBox5";
             comboBox5.Size = new Size(257, 23);
@@ -110,42 +112,56 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(37, 224);
+            dataGridView1.Location = new Point(41, 321);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(444, 298);
+            dataGridView1.Size = new Size(526, 298);
             dataGridView1.TabIndex = 6;
             // 
             // button2
             // 
-            button2.Location = new Point(661, 311);
+            button2.Font = new Font("Segoe UI", 12F);
+            button2.Location = new Point(358, 192);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(209, 29);
+            button2.Size = new Size(209, 43);
             button2.TabIndex = 7;
             button2.Text = "Adaugă Student în Grupă";
             button2.UseVisualStyleBackColor = true;
-            
             // 
             // button3
             // 
             button3.BackColor = SystemColors.Control;
+            button3.Font = new Font("Segoe UI", 12F);
             button3.ForeColor = Color.IndianRed;
-            button3.Location = new Point(661, 360);
+            button3.Location = new Point(358, 255);
             button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
-            button3.Size = new Size(209, 29);
+            button3.Size = new Size(209, 43);
             button3.TabIndex = 8;
             button3.Text = "Eliminare Student";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Modern No. 20", 40F);
+            label1.Location = new Point(104, 24);
+            label1.Name = "label1";
+            label1.Size = new Size(404, 55);
+            label1.TabIndex = 17;
+            label1.Text = "Gestionare Grupe";
+            // 
             // gestionareGrupe
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(964, 530);
+            BackColor = Color.White;
+            ClientSize = new Size(619, 662);
+            Controls.Add(label1);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(dataGridView1);
@@ -160,6 +176,7 @@
             Text = "gestionareGrupe";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -173,5 +190,6 @@
         private DataGridView dataGridView1;
         private Button button2;
         private Button button3;
+        private Label label1;
     }
 }

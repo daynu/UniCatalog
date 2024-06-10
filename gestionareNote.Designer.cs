@@ -36,13 +36,14 @@
             comboBox6 = new ComboBox();
             dataGridView1 = new DataGridView();
             button1 = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // comboBox5
             // 
             comboBox5.FormattingEnabled = true;
-            comboBox5.Location = new Point(378, 227);
+            comboBox5.Location = new Point(47, 321);
             comboBox5.Margin = new Padding(3, 2, 3, 2);
             comboBox5.Name = "comboBox5";
             comboBox5.Size = new Size(260, 23);
@@ -54,7 +55,7 @@
             // 
             comboBox4.FormattingEnabled = true;
             comboBox4.Items.AddRange(new object[] { "1", "2", "3", "4" });
-            comboBox4.Location = new Point(379, 154);
+            comboBox4.Location = new Point(48, 248);
             comboBox4.Margin = new Padding(3, 2, 3, 2);
             comboBox4.Name = "comboBox4";
             comboBox4.Size = new Size(259, 23);
@@ -65,7 +66,7 @@
             // comboBox3
             // 
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(378, 114);
+            comboBox3.Location = new Point(47, 208);
             comboBox3.Margin = new Padding(3, 2, 3, 2);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(260, 23);
@@ -76,7 +77,7 @@
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(378, 72);
+            comboBox2.Location = new Point(47, 166);
             comboBox2.Margin = new Padding(3, 2, 3, 2);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(260, 23);
@@ -87,7 +88,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(378, 22);
+            comboBox1.Location = new Point(47, 121);
             comboBox1.Margin = new Padding(3, 2, 3, 2);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(260, 23);
@@ -98,7 +99,7 @@
             // comboBox6
             // 
             comboBox6.FormattingEnabled = true;
-            comboBox6.Location = new Point(378, 190);
+            comboBox6.Location = new Point(47, 284);
             comboBox6.Margin = new Padding(3, 2, 3, 2);
             comboBox6.Name = "comboBox6";
             comboBox6.Size = new Size(260, 23);
@@ -109,18 +110,18 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(293, 275);
+            dataGridView1.Location = new Point(376, 121);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(439, 160);
+            dataGridView1.Size = new Size(439, 223);
             dataGridView1.TabIndex = 14;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // button1
             // 
             button1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(424, 458);
+            button1.Location = new Point(522, 377);
             button1.Name = "button1";
             button1.Size = new Size(131, 36);
             button1.TabIndex = 15;
@@ -128,11 +129,24 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Modern No. 20", 40F);
+            label1.Location = new Point(254, 26);
+            label1.Name = "label1";
+            label1.Size = new Size(372, 55);
+            label1.TabIndex = 16;
+            label1.Text = "Gestionare Note";
+            // 
             // gestionareNote
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(946, 516);
+            BackColor = Color.White;
+            ClientSize = new Size(893, 516);
+            Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
             Controls.Add(comboBox6);
@@ -146,6 +160,7 @@
             Text = "gestionareNote";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -158,5 +173,6 @@
         private ComboBox comboBox6;
         private DataGridView dataGridView1;
         private Button button1;
+        private Label label1;
     }
 }

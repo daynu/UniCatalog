@@ -53,5 +53,10 @@ namespace UniCatalog
                 comboBox3.Items.Add(program);
             }
         }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
