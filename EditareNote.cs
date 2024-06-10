@@ -32,7 +32,7 @@ namespace UniCatalog
             string prenume = textBox2.Text;
             string disciplina = textBox3.Text;
             string nota = textBox4.Text;
-            string data = dateTimePicker1.Text;
+            string data = dateTimePicker1.Value.ToString("yyyy-MM-dd");
             string grupa = textBox6.Text;
 
 
