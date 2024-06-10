@@ -105,5 +105,25 @@ namespace UniCatalog
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string nume = dataGridView1.SelectedRows[0].Cells["Nume"].Value.ToString();
+                string prenume = dataGridView1.SelectedRows[0].Cells["Prenume"].Value.ToString();
+                string disciplina = comboBox6.SelectedItem.ToString();
+                string grupa = comboBox5.SelectedItem.ToString();
+                string nota = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
+                
+
+                EditareNote editareNote = new EditareNote(nume, prenume, disciplina, nota, grupa);
+                editareNote.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Selectati un student pentru a-i modifica nota prin click stanga pe casuta libera din stanga randului");
+            }
+        }
     }
 }

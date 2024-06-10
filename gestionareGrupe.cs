@@ -122,6 +122,7 @@ namespace UniCatalog
                 cmd.CommandText = "DELETE FROM studenti WHERE nume = '" + nume + "' AND prenume = '" + prenume + "' AND grupa_id = (SELECT id FROM grupa WHERE nume = '" + grupa + "')";
                 cmd.ExecuteNonQuery();
                 connection.Close();
+                
             }
             catch (Exception ex)
             {
