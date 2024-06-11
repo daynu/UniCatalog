@@ -45,9 +45,9 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Niagara Solid", 110F);
             label1.ForeColor = Color.Tan;
-            label1.Location = new Point(344, 171);
+            label1.Location = new Point(393, 228);
             label1.Name = "label1";
-            label1.Size = new Size(319, 158);
+            label1.Size = new Size(401, 197);
             label1.TabIndex = 0;
             label1.Text = "Catalog";
             // 
@@ -56,9 +56,9 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 15F);
-            label2.Location = new Point(87, 27);
+            label2.Location = new Point(99, 36);
             label2.Name = "label2";
-            label2.Size = new Size(64, 28);
+            label2.Size = new Size(82, 35);
             label2.TabIndex = 1;
             label2.Text = "Name";
             label2.Click += label2_Click;
@@ -70,10 +70,9 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Haettenschweiler", 35F);
             button1.ForeColor = Color.Tan;
-            button1.Location = new Point(399, 360);
-            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Location = new Point(456, 480);
             button1.Name = "button1";
-            button1.Size = new Size(200, 69);
+            button1.Size = new Size(287, 92);
             button1.TabIndex = 2;
             button1.Text = "N O T E";
             button1.UseVisualStyleBackColor = false;
@@ -86,10 +85,9 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Haettenschweiler", 35F);
             button2.ForeColor = Color.Tan;
-            button2.Location = new Point(399, 570);
-            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Location = new Point(456, 760);
             button2.Name = "button2";
-            button2.Size = new Size(200, 69);
+            button2.Size = new Size(287, 92);
             button2.TabIndex = 3;
             button2.Text = "UTILIZATORI";
             button2.UseVisualStyleBackColor = false;
@@ -102,10 +100,9 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Haettenschweiler", 35F);
             button3.ForeColor = Color.Tan;
-            button3.Location = new Point(399, 467);
-            button3.Margin = new Padding(3, 2, 3, 2);
+            button3.Location = new Point(456, 623);
             button3.Name = "button3";
-            button3.Size = new Size(200, 69);
+            button3.Size = new Size(287, 92);
             button3.TabIndex = 4;
             button3.Text = "G R U P E";
             button3.UseVisualStyleBackColor = false;
@@ -116,9 +113,9 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 15F);
-            label3.Location = new Point(12, 27);
+            label3.Location = new Point(14, 36);
             label3.Name = "label3";
-            label3.Size = new Size(69, 28);
+            label3.Size = new Size(88, 35);
             label3.TabIndex = 5;
             label3.Text = "Nume:";
             // 
@@ -128,9 +125,9 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Niagara Solid", 50F);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(452, 680);
+            label4.Location = new Point(517, 907);
             label4.Name = "label4";
-            label4.Size = new Size(104, 72);
+            label4.Size = new Size(135, 90);
             label4.TabIndex = 6;
             label4.Text = "2024";
             // 
@@ -140,19 +137,19 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Modern No. 20", 40F, FontStyle.Italic);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(373, 27);
+            label5.Location = new Point(426, 36);
             label5.Name = "label5";
-            label5.Size = new Size(254, 55);
+            label5.Size = new Size(317, 69);
             label5.TabIndex = 7;
             label5.Text = "Bun venit!";
             // 
             // Main
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(974, 761);
+            ClientSize = new Size(1113, 1015);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -161,7 +158,6 @@
             Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "Main";
             Text = "UniCatalog";
             ResumeLayout(false);
